@@ -124,7 +124,7 @@ WatchID FileWatcherInotify::addWatch( const std::string& directory, FileWatchLis
 		}
 	}
 
-	int wd = inotify_add_watch (mFD, dir.c_str(), IN_CLOSE_WRITE | IN_MOVED_TO | IN_CREATE | IN_MOVED_FROM | IN_DELETE | IN_MODIFY);
+	int wd = inotify_add_watch (mFD, dir.c_str(), IN_CLOSE_WRITE | IN_MOVED_TO | IN_CREATE | IN_MOVED_FROM | IN_DELETE);
 
 	if ( wd < 0 )
 	{
