@@ -33,8 +33,11 @@ FileWatcherInotify::FileWatcherInotify( FileWatcher * parent ) :
 {
 	mFD = inotify_init();
 
+    std::cout << "FIRE*** Inited FileWatcherInotify\n";
+
 	if (mFD < 0)
 	{
+
 		efDEBUG( "Error: %s\n", strerror(errno) );
 	}
 	else

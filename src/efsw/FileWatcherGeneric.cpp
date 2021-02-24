@@ -11,6 +11,7 @@ FileWatcherGeneric::FileWatcherGeneric( FileWatcher * parent ) :
 	mThread( NULL ),
 	mLastWatchID( 0 )
 {
+    std::cout << "FIRE*** Inited FileWatcherGeneric\n";
 	mInitOK = true;
 	mIsGeneric = true;
 }

@@ -83,6 +83,7 @@ elseif (WIN32)
 		src/efsw/WatcherWin32.cpp
 	)
 elseif (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+	add_definitions(-D__linux__)
 	target_sources(efsw PRIVATE
 		src/efsw/FileWatcherInotify.cpp
 		src/efsw/WatcherInotify.cpp
