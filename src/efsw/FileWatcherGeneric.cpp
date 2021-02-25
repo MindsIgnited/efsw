@@ -2,7 +2,6 @@
 #include <efsw/FileSystem.hpp>
 #include <efsw/System.hpp>
 #include <efsw/Lock.hpp>
-#include <iostream>
 
 namespace efsw
 {
@@ -12,7 +11,6 @@ FileWatcherGeneric::FileWatcherGeneric( FileWatcher * parent ) :
 	mThread( NULL ),
 	mLastWatchID( 0 )
 {
-    std::cout << "FIRE*** Inited FileWatcherGeneric\n";
 	mInitOK = true;
 	mIsGeneric = true;
 }

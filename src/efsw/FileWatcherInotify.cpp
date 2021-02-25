@@ -20,7 +20,6 @@
 #include <efsw/Debug.hpp>
 #include <efsw/Lock.hpp>
 #include <efsw/String.hpp>
-#include <iostream>
 
 #define BUFF_SIZE ((sizeof(struct inotify_event)+FILENAME_MAX)*1024)
 
@@ -33,8 +32,6 @@ FileWatcherInotify::FileWatcherInotify( FileWatcher * parent ) :
 	mThread(NULL)
 {
 	mFD = inotify_init();
-
-    std::cout << "FIRE*** Inited FileWatcherInotify\n";
 
 	if (mFD < 0)
 	{
@@ -128,7 +125,7 @@ WatchID FileWatcherInotify::addWatch( const std::string& directory, FileWatchLis
 		}
 	}
 
-	int wd = inotify_add_watch (mFD, dir.c_str(), IN_CLOSE_WRITE | IN_MOVED_TO | IN_CREATE | IN_MOVED_FROM | IN_DELETE);
+	int wd = inotify_add_watch (mFD, dir.c_str(), IN_MOVED_TO | IN_CREATE | IN_MOVED_FROM | IN_DELETE);
 
 	if ( wd < 0 )
 	{
