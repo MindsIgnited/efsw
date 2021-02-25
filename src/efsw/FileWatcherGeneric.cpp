@@ -2,6 +2,7 @@
 #include <efsw/FileSystem.hpp>
 #include <efsw/System.hpp>
 #include <efsw/Lock.hpp>
+#include <iostream>
 
 namespace efsw
 {

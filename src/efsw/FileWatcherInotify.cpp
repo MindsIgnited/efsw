@@ -20,6 +20,7 @@
 #include <efsw/Debug.hpp>
 #include <efsw/Lock.hpp>
 #include <efsw/String.hpp>
+#include <iostream>
 
 #define BUFF_SIZE ((sizeof(struct inotify_event)+FILENAME_MAX)*1024)
 
